@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlavorFusion | Delicious Food Delivered</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- PRELOADER -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo">
+                <i class="fa-solid fa-utensils"></i>
+                <span>FlavorFusion</span>
+            </div>
+            <div class="preloader-spinner">
+                <div class="spinner-ring"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST CONTAINER -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- STICKY NAVIGATION -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <i class="fa-solid fa-utensils"></i>
+                <span>Flavor<span class="logo-accent">Fusion</span></span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#featured" class="nav-link">Featured</a></li>
+                <li><a href="#menu" class="nav-link">Menu</a></li>
+                <li><a href="#offers" class="nav-link">Offers</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#reviews" class="nav-link">Reviews</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="icon-btn theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <button class="icon-btn cart-btn" id="cartBtn" aria-label="Open cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </button>
+                <button class="icon-btn hamburger" id="hamburger" aria-label="Toggle menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CART OVERLAY -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- CART SIDEBAR -->
+    <aside class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3><i class="fa-solid fa-cart-shopping"></i> Your Cart</h3>
+            <button class="icon-btn cart-close" id="cartClose">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="cart-empty">Your cart is empty 🛒</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span class="cart-total-price" id="cartTotal">$0.00</span>
+            </div>
+            <button class="btn btn-primary btn-full" id="checkoutBtn">
+                Proceed to Checkout <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
+    </aside>
+
+    <!-- HERO SECTION WITH SLIDER (using background images) -->
+    <section class="hero" id="home">
+        <div class="hero-slider" id="heroSlider">
+            <!-- Slide 1 (Burger background) -->
+            <div class="hero-slide active" style="background: linear-gradient(135deg, rgba(26,26,46,0.85) 0%, rgba(22,33,62,0.7) 40%, rgba(232,93,4,0.85) 100%), url('https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1200&q=80') center/cover no-repeat;">
+                <div class="hero-content">
+                    <span class="hero-badge">🔥 Hot & Fresh</span>
+                    <h1 class="hero-title">Savor the <span class="text-accent">Flavor</span><br>of Perfection</h1>
+                    <p class="hero-subtitle">Handcrafted burgers, wood-fired pizzas, and decadent desserts — all made with love and the freshest ingredients.</p>
+                    <div class="hero-btns">
+                        <a href="#menu" class="btn btn-primary btn-lg">Order Now <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="#featured" class="btn btn-outline btn-lg">Explore Menu</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2 (Pizza background) -->
+            <div class="hero-slide" style="background: linear-gradient(135deg, rgba(26,10,10,0.85) 0%, rgba(45,21,21,0.7) 40%, rgba(220,47,2,0.85) 100%), url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=1200&q=80') center/cover no-repeat;">
+                <div class="hero-content">
+                    <span class="hero-badge">🍕 Special Deal</span>
+                    <h1 class="hero-title">Wood-Fired <span class="text-accent">Pizza</span><br>Like No Other</h1>
+                    <p class="hero-subtitle">Authentic Italian recipes with a modern twist. Every slice is a journey to flavor paradise.</p>
+                    <div class="hero-btns">
+                        <a href="#menu" class="btn btn-primary btn-lg">Grab a Slice <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="#offers" class="btn btn-outline btn-lg">View Deals</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 (Dessert background) -->
+            <div class="hero-slide" style="background: linear-gradient(135deg, rgba(10,26,10,0.85) 0%, rgba(21,45,21,0.7) 40%, rgba(250,163,7,0.85) 100%), url('https://images.unsplash.com/photo-1551024601-bec78aea704b?w=1200&q=80') center/cover no-repeat;">
+                <div class="hero-content">
+                    <span class="hero-badge">🍰 New Arrivals</span>
+                    <h1 class="hero-title">Desserts That<br><span class="text-accent">Steal the Show</span></h1>
+                    <p class="hero-subtitle">From creamy cheesecakes to molten lava cakes — end your meal on a sweet high note.</p>
+                    <div class="hero-btns">
+                        <a href="#menu" class="btn btn-primary btn-lg">Order Desserts <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="#featured" class="btn btn-outline btn-lg">Best Sellers</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slider Dots -->
+        <div class="slider-dots" id="sliderDots">
+            <span class="dot active" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+        </div>
+        <button class="slider-arrow slider-prev" id="sliderPrev"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="slider-arrow slider-next" id="sliderNext"><i class="fa-solid fa-chevron-right"></i></button>
+
+        <!-- Wave Divider -->
+        <div class="hero-wave">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path d="M0,60 C360,120 720,0 1080,60 C1260,90 1380,40 1440,60 L1440,120 L0,120 Z" fill="var(--bg-primary)"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- FEATURED DISHES SECTION -->
+    <section class="section featured-section" id="featured">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Popular Picks</span>
+                <h2 class="section-title">Featured <span class="text-accent">Dishes</span></h2>
+                <p class="section-desc">Our most loved creations, crafted to delight your taste buds</p>
+            </div>
+            <div class="featured-grid" id="featuredGrid">
+                <!-- Rendered by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- FULL MENU SECTION -->
+    <section class="section menu-section" id="menu">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Our Menu</span>
+                <h2 class="section-title">Explore Our <span class="text-accent">Delicious</span> Menu</h2>
+                <p class="section-desc">Everything we have to offer at your fingertips</p>
+            </div>
+            <div class="menu-controls">
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="searchInput" placeholder="Search your craving...">
+                </div>
+                <div class="category-filters" id="categoryFilters">
+                    <button class="cat-btn active" data-category="all">All</button>
+                    <button class="cat-btn" data-category="pizza">🍕 Pizza</button>
+                    <button class="cat-btn" data-category="burger">🍔 Burgers</button>
+                    <button class="cat-btn" data-category="drinks">🥤 Drinks</button>
+                    <button class="cat-btn" data-category="dessert">🍰 Desserts</button>
+                </div>
+            </div>
+            <div class="menu-grid" id="menuGrid">
+                <!-- Rendered by JavaScript -->
+            </div>
+            <div class="no-results" id="noResults" style="display:none;">
+                <i class="fa-solid fa-face-frown"></i>
+                <p>No items found. Try a different search or category!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SPECIAL OFFERS / COUNTDOWN -->
+    <section class="section offers-section" id="offers">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Limited Time</span>
+                <h2 class="section-title">Special <span class="text-accent">Offers</span></h2>
+                <p class="section-desc">Grab these deals before they're gone!</p>
+            </div>
+            <div class="countdown-wrapper">
+                <p class="countdown-label">⏰ Offer Ends In:</p>
+                <div class="countdown-timer" id="countdownTimer">
+                    <div class="countdown-item"><span class="countdown-number" id="countDays">00</span><span class="countdown-unit">Days</span></div>
+                    <span class="countdown-sep">:</span>
+                    <div class="countdown-item"><span class="countdown-number" id="countHours">00</span><span class="countdown-unit">Hours</span></div>
+                    <span class="countdown-sep">:</span>
+                    <div class="countdown-item"><span class="countdown-number" id="countMins">00</span><span class="countdown-unit">Mins</span></div>
+                    <span class="countdown-sep">:</span>
+                    <div class="countdown-item"><span class="countdown-number" id="countSecs">00</span><span class="countdown-unit">Secs</span></div>
+                </div>
+            </div>
+         <div class="offers-grid">
+    <div class="offer-card">
+        <div class="offer-badge">50% OFF</div>
+        <div class="offer-icon">
+            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&h=300&fit=crop" alt="Double Pizza Deal">
+        </div>
+        <h3>Double Pizza Deal</h3>
+        <p>Buy one large pizza, get the second at half price.</p>
+        <span class="offer-code">Code: PIZZA50</span>
+    </div>
+    <div class="offer-card">
+        <div class="offer-badge">FREE</div>
+        <div class="offer-icon">
+            <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&h=300&fit=crop" alt="Free Drink with Burger">
+        </div>
+        <h3>Free Drink with Burger</h3>
+        <p>Order any signature burger and enjoy a complimentary drink.</p>
+        <span class="offer-code">Code: BURGERSIP</span>
+    </div>
+    <div class="offer-card">
+        <div class="offer-badge">20% OFF</div>
+        <div class="offer-icon">
+            <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=400&h=300&fit=crop" alt="Sweet Tooth Special">
+        </div>
+        <h3>Sweet Tooth Special</h3>
+        <p>Get 20% off on all desserts when you order a main course.</p>
+        <span class="offer-code">Code: SWEET20</span>
+    </div>
+</div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section about-section" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image-wrapper">
+                    <div class="about-image-placeholder" style="background: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80') center/cover no-repeat;">
+                        <div class="about-floating-card">
+                            <span class="about-stat">15+</span>
+                            <span>Years of<br>Excellence</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <span class="section-label">Our Story</span>
+                    <h2 class="section-title">Crafting <span class="text-accent">Memories</span> Through Food</h2>
+                    <p class="about-text">At <strong>FlavorFusion</strong>, we believe food is more than just sustenance — it's an experience, a memory, a celebration. Founded in 2009 by Chef Marco Vitelli, our kitchen blends traditional techniques with bold, modern flavors.</p>
+                    <p class="about-text">Every ingredient is handpicked, every recipe is tested to perfection, and every plate tells a story. From our wood-fired oven to your table, we pour passion into everything we serve.</p>
+                    <div class="about-features">
+                        <div class="about-feature"><i class="fa-solid fa-leaf"></i><span>Fresh Ingredients</span></div>
+                        <div class="about-feature"><i class="fa-solid fa-fire-burner"></i><span>Expert Chefs</span></div>
+                        <div class="about-feature"><i class="fa-solid fa-truck-fast"></i><span>Fast Delivery</span></div>
+                        <div class="about-feature"><i class="fa-solid fa-heart"></i><span>Made with Love</span></div>
+                    </div>
+                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REVIEWS SECTION -->
+    <section class="section reviews-section" id="reviews">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Testimonials</span>
+                <h2 class="section-title">What Our <span class="text-accent">Customers</span> Say</h2>
+                <p class="section-desc">Real reviews from real food lovers</p>
+            </div>
+            <div class="reviews-grid" id="reviewsGrid"></div>
+            <div class="reviews-average" id="reviewsAverage"></div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section contact-section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Get In Touch</span>
+                <h2 class="section-title">Contact <span class="text-accent">Us</span></h2>
+            </div>
+            <div class="contact-grid">
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group"><label for="contactName">Your Name *</label><input type="text" id="contactName" placeholder="Enter your name" required><span class="form-error" id="nameError"></span></div>
+                    <div class="form-group"><label for="contactEmail">Email Address *</label><input type="email" id="contactEmail" placeholder="Enter your email" required><span class="form-error" id="emailError"></span></div>
+                    <div class="form-group"><label for="contactSubject">Subject</label><input type="text" id="contactSubject" placeholder="What's this about?"></div>
+                    <div class="form-group"><label for="contactMessage">Message *</label><textarea id="contactMessage" rows="5" placeholder="Write your message..." required></textarea><span class="form-error" id="messageError"></span></div>
+                    <button type="submit" class="btn btn-primary btn-full">Send Message <i class="fa-solid fa-paper-plane"></i></button>
+                </form>
+                <div class="contact-info">
+                    <div class="contact-info-card"><i class="fa-solid fa-location-dot"></i><h4>Our Location</h4><p>123 Flavor Street, Foodie District<br>New York, NY 10001</p></div>
+                    <div class="contact-info-card"><i class="fa-solid fa-phone"></i><h4>Call Us</h4><p>+1 (555) 123-4567<br>+1 (555) 987-6543</p></div>
+                    <div class="contact-info-card"><i class="fa-solid fa-envelope"></i><h4>Email Us</h4><p>hello@flavorfusion.com<br>orders@flavorfusion.com</p></div>
+                    <div class="contact-info-card"><i class="fa-solid fa-clock"></i><h4>Opening Hours</h4><p>Mon - Thu: 11:00 AM - 10:00 PM<br>Fri - Sun: 11:00 AM - 12:00 AM</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3><i class="fa-solid fa-utensils"></i> Flavor<span class="logo-accent">Fusion</span></h3>
+                    <p>Bringing delicious moments to your table since 2009. Quality food, crafted with passion.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li><li><a href="#menu">Menu</a></li><li><a href="#offers">Special Offers</a></li><li><a href="#about">About Us</a></li><li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-hours">
+                    <h4>Opening Hours</h4>
+                    <ul>
+                        <li><span>Mon - Thu</span> <span>11:00 AM - 10:00 PM</span></li>
+                        <li><span>Friday</span> <span>11:00 AM - 12:00 AM</span></li>
+                        <li><span>Saturday</span> <span>10:00 AM - 12:00 AM</span></li>
+                        <li><span>Sunday</span> <span>10:00 AM - 10:00 PM</span></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Stay Updated</h4>
+                    <p>Subscribe for exclusive deals and new menu alerts!</p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 FlavorFusion. All rights reserved. Made with ❤️ for food lovers.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCROLL TO TOP BUTTON -->
+    <button class="scroll-top-btn" id="scrollTopBtn"><i class="fa-solid fa-chevron-up"></i></button>
+
+    <!-- CHECKOUT MODAL -->
+    <div class="modal-overlay" id="checkoutModalOverlay">
+        <div class="modal checkout-modal" id="checkoutModal">
+            <button class="modal-close" id="checkoutModalClose"><i class="fa-solid fa-xmark"></i></button>
+            <div class="checkout-icon">🎉</div>
+            <h2>Order Placed Successfully!</h2>
+            <p>Your delicious food is being prepared. Estimated delivery: <strong>30-45 minutes</strong>.</p>
+            <p class="checkout-order-total">Total: <span id="checkoutOrderTotal">$0.00</span></p>
+            <button class="btn btn-primary" id="checkoutConfirmBtn">Awesome, Thanks!</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -16,6 +16,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <!-- PRELOADER -->
@@ -31,24 +32,24 @@
         </div>
     </div>
 
-    <!-- TOAST CONTAINER -->
+    <!-- TOAST -->
     <div class="toast-container" id="toastContainer"></div>
 
-    <!-- STICKY NAVIGATION -->
+    <!-- NAVBAR -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="#home" class="nav-logo">
+            <a href="index.html" class="nav-logo">
                 <i class="fa-solid fa-utensils"></i>
                 <span>Flavor<span class="logo-accent">Fusion</span></span>
             </a>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#featured" class="nav-link">Featured</a></li>
-                <li><a href="#menu" class="nav-link">Menu</a></li>
-                <li><a href="#offers" class="nav-link">Offers</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#reviews" class="nav-link">Reviews</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="featured.html" class="nav-link">Featured</a></li>
+                <li><a href="menu.html" class="nav-link">Menu</a></li>
+                <li><a href="offers.html" class="nav-link">Offers</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="reviews.html" class="nav-link">Reviews</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
             <div class="nav-actions">
                 <button class="icon-btn theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
@@ -90,44 +91,42 @@
         </div>
     </aside>
 
-    <!-- HERO SECTION WITH SLIDER (using background images) -->
+    <!-- HERO -->
     <section class="hero" id="home">
         <div class="hero-slider" id="heroSlider">
-            <!-- Slide 1 (Burger background) -->
+            <!-- Slide 1 -->
             <div class="hero-slide active" style="background: linear-gradient(135deg, rgba(26,26,46,0.85) 0%, rgba(22,33,62,0.7) 40%, rgba(232,93,4,0.85) 100%), url('https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1200&q=80') center/cover no-repeat;">
                 <div class="hero-content">
                     <span class="hero-badge">🔥 Hot & Fresh</span>
                     <h1 class="hero-title">Savor the <span class="text-accent">Flavor</span><br>of Perfection</h1>
                     <p class="hero-subtitle">Handcrafted burgers, wood-fired pizzas, and decadent desserts — all made with love and the freshest ingredients.</p>
                     <div class="hero-btns">
-                        <a href="#menu" class="btn btn-primary btn-lg">Order Now <i class="fa-solid fa-arrow-right"></i></a>
-                        <a href="#featured" class="btn btn-outline btn-lg">Explore Menu</a>
+                        <a href="menu.html" class="btn btn-primary btn-lg">Order Now <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="featured.html" class="btn btn-outline btn-lg">Explore Menu</a>
                     </div>
                 </div>
             </div>
-
-            <!-- Slide 2 (Pizza background) -->
+            <!-- Slide 2 -->
             <div class="hero-slide" style="background: linear-gradient(135deg, rgba(26,10,10,0.85) 0%, rgba(45,21,21,0.7) 40%, rgba(220,47,2,0.85) 100%), url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=1200&q=80') center/cover no-repeat;">
                 <div class="hero-content">
                     <span class="hero-badge">🍕 Special Deal</span>
                     <h1 class="hero-title">Wood-Fired <span class="text-accent">Pizza</span><br>Like No Other</h1>
                     <p class="hero-subtitle">Authentic Italian recipes with a modern twist. Every slice is a journey to flavor paradise.</p>
                     <div class="hero-btns">
-                        <a href="#menu" class="btn btn-primary btn-lg">Grab a Slice <i class="fa-solid fa-arrow-right"></i></a>
-                        <a href="#offers" class="btn btn-outline btn-lg">View Deals</a>
+                        <a href="menu.html" class="btn btn-primary btn-lg">Grab a Slice <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="offers.html" class="btn btn-outline btn-lg">View Deals</a>
                     </div>
                 </div>
             </div>
-
-            <!-- Slide 3 (Dessert background) -->
+            <!-- Slide 3 -->
             <div class="hero-slide" style="background: linear-gradient(135deg, rgba(10,26,10,0.85) 0%, rgba(21,45,21,0.7) 40%, rgba(250,163,7,0.85) 100%), url('https://images.unsplash.com/photo-1551024601-bec78aea704b?w=1200&q=80') center/cover no-repeat;">
                 <div class="hero-content">
                     <span class="hero-badge">🍰 New Arrivals</span>
                     <h1 class="hero-title">Desserts That<br><span class="text-accent">Steal the Show</span></h1>
                     <p class="hero-subtitle">From creamy cheesecakes to molten lava cakes — end your meal on a sweet high note.</p>
                     <div class="hero-btns">
-                        <a href="#menu" class="btn btn-primary btn-lg">Order Desserts <i class="fa-solid fa-arrow-right"></i></a>
-                        <a href="#featured" class="btn btn-outline btn-lg">Best Sellers</a>
+                        <a href="menu.html" class="btn btn-primary btn-lg">Order Desserts <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="featured.html" class="btn btn-outline btn-lg">Best Sellers</a>
                     </div>
                 </div>
             </div>
@@ -142,7 +141,7 @@
         <button class="slider-arrow slider-prev" id="sliderPrev"><i class="fa-solid fa-chevron-left"></i></button>
         <button class="slider-arrow slider-next" id="sliderNext"><i class="fa-solid fa-chevron-right"></i></button>
 
-        <!-- Wave Divider -->
+        <!-- Wave -->
         <div class="hero-wave">
             <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
                 <path d="M0,60 C360,120 720,0 1080,60 C1260,90 1380,40 1440,60 L1440,120 L0,120 Z" fill="var(--bg-primary)"/>
@@ -150,7 +149,7 @@
         </div>
     </section>
 
-    <!-- FEATURED DISHES SECTION -->
+    <!-- FEATURED -->
     <section class="section featured-section" id="featured">
         <div class="container">
             <div class="section-header">
@@ -158,13 +157,11 @@
                 <h2 class="section-title">Featured <span class="text-accent">Dishes</span></h2>
                 <p class="section-desc">Our most loved creations, crafted to delight your taste buds</p>
             </div>
-            <div class="featured-grid" id="featuredGrid">
-                <!-- Rendered by JavaScript -->
-            </div>
+            <div class="featured-grid" id="featuredGrid"></div>
         </div>
     </section>
 
-    <!-- FULL MENU SECTION -->
+    <!-- MENU -->
     <section class="section menu-section" id="menu">
         <div class="container">
             <div class="section-header">
@@ -185,9 +182,7 @@
                     <button class="cat-btn" data-category="dessert">🍰 Desserts</button>
                 </div>
             </div>
-            <div class="menu-grid" id="menuGrid">
-                <!-- Rendered by JavaScript -->
-            </div>
+            <div class="menu-grid" id="menuGrid"></div>
             <div class="no-results" id="noResults" style="display:none;">
                 <i class="fa-solid fa-face-frown"></i>
                 <p>No items found. Try a different search or category!</p>
@@ -195,7 +190,7 @@
         </div>
     </section>
 
-    <!-- SPECIAL OFFERS / COUNTDOWN -->
+    <!-- ===== OFFERS — FIXED ===== -->
     <section class="section offers-section" id="offers">
         <div class="container">
             <div class="section-header">
@@ -203,6 +198,7 @@
                 <h2 class="section-title">Special <span class="text-accent">Offers</span></h2>
                 <p class="section-desc">Grab these deals before they're gone!</p>
             </div>
+
             <div class="countdown-wrapper">
                 <p class="countdown-label">⏰ Offer Ends In:</p>
                 <div class="countdown-timer" id="countdownTimer">
@@ -215,39 +211,55 @@
                     <div class="countdown-item"><span class="countdown-number" id="countSecs">00</span><span class="countdown-unit">Secs</span></div>
                 </div>
             </div>
-         <div class="offers-grid">
-    <div class="offer-card">
-        <div class="offer-badge">50% OFF</div>
-        <div class="offer-icon">
-            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&h=300&fit=crop" alt="Double Pizza Deal">
-        </div>
-        <h3>Double Pizza Deal</h3>
-        <p>Buy one large pizza, get the second at half price.</p>
-        <span class="offer-code">Code: PIZZA50</span>
-    </div>
-    <div class="offer-card">
-        <div class="offer-badge">FREE</div>
-        <div class="offer-icon">
-            <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&h=300&fit=crop" alt="Free Drink with Burger">
-        </div>
-        <h3>Free Drink with Burger</h3>
-        <p>Order any signature burger and enjoy a complimentary drink.</p>
-        <span class="offer-code">Code: BURGERSIP</span>
-    </div>
-    <div class="offer-card">
-        <div class="offer-badge">20% OFF</div>
-        <div class="offer-icon">
-            <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=400&h=300&fit=crop" alt="Sweet Tooth Special">
-        </div>
-        <h3>Sweet Tooth Special</h3>
-        <p>Get 20% off on all desserts when you order a main course.</p>
-        <span class="offer-code">Code: SWEET20</span>
-    </div>
-</div>
+
+            <!-- OFFER CARDS — clean markup -->
+            <div class="offers-grid">
+
+                <!-- Card 1: 50% OFF -->
+                <div class="offer-card" >
+                    <div class="offer-image">
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=900&auto=format&fit=crop" alt="Double Pizza Deal" loading="lazy">
+                        <div class="offer-badge">50% OFF</div>
+                    </div>
+                    <div>
+                    <div class="offer-content" >
+                        <h3 >Double Pizza Deal</h3>
+                        <p>Buy one large pizza, get the second at half price.</p>
+                        <span class="offer-code">Code: PIZZA50</span>
+                    </div>
+                </div>
+
+                <!-- Card 2: FREE Drink -->
+                <div class="offer-card">
+                    <div class="offer-image">
+                        <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=900&auto=format&fit=crop" alt="Free Drink with Burger" loading="lazy">
+                        <div class="offer-badge free">FREE</div>
+                    </div>
+                    <div class="offer-content">
+                        <h3>Free Drink with Burger</h3>
+                        <p>Order any signature burger and enjoy a complimentary drink.</p>
+                        <span class="offer-code">Code: BURGERSIP</span>
+                    </div>
+                </div>
+
+                <!-- Card 3: 20% OFF -->
+                <div class="offer-card">
+                    <div class="offer-image">
+                        <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=900&auto=format&fit=crop" alt="Sweet Tooth Special" loading="lazy">
+                        <div class="offer-badge">20% OFF</div>
+                    </div>
+                    <div class="offer-content">
+                        <h3>Sweet Tooth Special</h3>
+                        <p>Get 20% off on all desserts when you order a main course.</p>
+                        <span class="offer-code">Code: SWEET20</span>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </section>
 
-    <!-- ABOUT SECTION -->
+    <!-- ABOUT -->
     <section class="section about-section" id="about">
         <div class="container">
             <div class="about-grid">
@@ -270,13 +282,13 @@
                         <div class="about-feature"><i class="fa-solid fa-truck-fast"></i><span>Fast Delivery</span></div>
                         <div class="about-feature"><i class="fa-solid fa-heart"></i><span>Made with Love</span></div>
                     </div>
-                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                    <a href="contact.html" class="btn btn-primary">Get In Touch</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- REVIEWS SECTION -->
+    <!-- REVIEWS -->
     <section class="section reviews-section" id="reviews">
         <div class="container">
             <div class="section-header">
@@ -289,7 +301,7 @@
         </div>
     </section>
 
-    <!-- CONTACT SECTION -->
+    <!-- CONTACT -->
     <section class="section contact-section" id="contact">
         <div class="container">
             <div class="section-header">
@@ -331,7 +343,12 @@
                 <div class="footer-links">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="#home">Home</a></li><li><a href="#menu">Menu</a></li><li><a href="#offers">Special Offers</a></li><li><a href="#about">About Us</a></li><li><a href="#contact">Contact</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="offers.html">Special Offers</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
                     </ul>
                 </div>
                 <div class="footer-hours">
@@ -354,11 +371,12 @@
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2026 FlavorFusion. All rights reserved. Made with ❤️ for food lovers.</p>
+                | <a href="privacy-policy.html" style="color:inherit; text-decoration:underline;">Privacy Policy</a>
             </div>
         </div>
     </footer>
 
-    <!-- SCROLL TO TOP BUTTON -->
+    <!-- SCROLL TOP -->
     <button class="scroll-top-btn" id="scrollTopBtn"><i class="fa-solid fa-chevron-up"></i></button>
 
     <!-- CHECKOUT MODAL -->
@@ -372,7 +390,6 @@
             <button class="btn btn-primary" id="checkoutConfirmBtn">Awesome, Thanks!</button>
         </div>
     </div>
-
     <script src="script.js"></script>
-</body>
+    </body>
 </html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlavorFusion | Customer Reviews</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="preloader" id="preloader"><div class="preloader-content"><div class="preloader-logo"><i class="fa-solid fa-utensils"></i><span>FlavorFusion</span></div><div class="preloader-spinner"><div class="spinner-ring"></div></div></div></div>
+    <div class="toast-container" id="toastContainer"></div>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo"><i class="fa-solid fa-utensils"></i><span>Flavor<span class="logo-accent">Fusion</span></span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-link">Home</a></li><li><a href="featured.html" class="nav-link">Featured</a></li><li><a href="menu.html" class="nav-link">Menu</a></li><li><a href="offers.html" class="nav-link">Offers</a></li><li><a href="about.html" class="nav-link">About</a></li><li><a href="reviews.html" class="nav-link active">Reviews</a></li><li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="icon-btn theme-toggle" id="themeToggle"><i class="fa-solid fa-moon"></i></button>
+                <button class="icon-btn cart-btn" id="cartBtn"><i class="fa-solid fa-cart-shopping"></i><span class="cart-badge" id="cartBadge">0</span></button>
+                <button class="icon-btn hamburger" id="hamburger"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <aside class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header"><h3><i class="fa-solid fa-cart-shopping"></i> Your Cart</h3><button class="icon-btn cart-close" id="cartClose"><i class="fa-solid fa-xmark"></i></button></div>
+        <div class="cart-items" id="cartItems"><p class="cart-empty">Your cart is empty 🛒</p></div>
+        <div class="cart-footer"><div class="cart-total"><span>Total:</span><span class="cart-total-price" id="cartTotal">$0.00</span></div><button class="btn btn-primary btn-full" id="checkoutBtn">Proceed to Checkout <i class="fa-solid fa-arrow-right"></i></button></div>
+    </aside>
+
+    <section class="section reviews-section" id="reviews" style="padding-top: 6rem;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Testimonials</span>
+                <h2 class="section-title">What Our <span class="text-accent">Customers</span> Say</h2>
+                <p class="section-desc">Real reviews from real food lovers</p>
+            </div>
+
+            <!-- Existing JS-rendered reviews -->
+            <div class="reviews-grid" id="reviewsGrid"></div>
+            <div class="reviews-average" id="reviewsAverage"></div>
+
+            <!-- Additional handwritten reviews (static) -->
+            <div class="section-header" style="margin-top: 3rem;">
+                <h3>More Love from Our Guests</h3>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-avatar"><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&h=100&fit=crop&crop=face" class="avatar-img"></div>
+                    <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="review-text">"The Margherita pizza transported me to Naples! Fresh, authentic, and absolutely delicious."</p>
+                    <h4 class="review-author">Isabella R.</h4>
+                </div>
+                <div class="review-card">
+                    <div class="review-avatar"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face" class="avatar-img"></div>
+                    <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="review-text">"Best burger in town. The Bacon Beast is a must-try. Friendly staff and quick delivery."</p>
+                    <h4 class="review-author">James T.</h4>
+                </div>
+                <div class="review-card">
+                    <div class="review-avatar"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=face" class="avatar-img"></div>
+                    <div class="review-stars">⭐⭐⭐⭐✨</div>
+                    <p class="review-text">"The chocolate lava cake is heaven on earth. I order it every single week!"</p>
+                    <h4 class="review-author">Olivia M.</h4>
+                </div>
+            </div>
+
+            <!-- Leave a Review Form -->
+            <div class="section-header" style="margin-top: 4rem;">
+                <span class="section-label">Share Your Experience</span>
+                <h2 class="section-title">Leave a <span class="text-accent">Review</span></h2>
+            </div>
+            <form class="contact-form" id="reviewForm" style="max-width: 600px; margin: 0 auto;">
+                <div class="form-group"><label for="reviewName">Your Name</label><input type="text" id="reviewName" placeholder="Enter your name" required></div>
+                <div class="form-group"><label for="reviewRating">Rating</label>
+                    <select id="reviewRating" style="width:100%; padding: 0.8rem; border-radius: 12px; border: 2px solid var(--input-border); background: var(--input-bg); color: var(--text-primary);">
+                        <option>5 - Excellent</option><option>4 - Very Good</option><option>3 - Good</option><option>2 - Fair</option><option>1 - Poor</option>
+                    </select>
+                </div>
+                <div class="form-group"><label for="reviewMessage">Your Review</label><textarea id="reviewMessage" rows="4" placeholder="Tell us about your experience..." required></textarea></div>
+                <button type="submit" class="btn btn-primary btn-full">Submit Review <i class="fa-solid fa-star"></i></button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand"><h3><i class="fa-solid fa-utensils"></i> Flavor<span class="logo-accent">Fusion</span></h3><p>Bringing delicious moments to your table since 2009.</p><div class="footer-social"><a href="#"><i class="fa-brands fa-facebook-f"></i></a><a href="#"><i class="fa-brands fa-instagram"></i></a><a href="#"><i class="fa-brands fa-x-twitter"></i></a><a href="#"><i class="fa-brands fa-tiktok"></i></a></div></div>
+                <div class="footer-links"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="menu.html">Menu</a></li><li><a href="offers.html">Special Offers</a></li><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+                <div class="footer-hours"><h4>Opening Hours</h4><ul><li><span>Mon - Thu</span> <span>11:00 AM - 10:00 PM</span></li><li><span>Friday</span> <span>11:00 AM - 12:00 AM</span></li><li><span>Saturday</span> <span>10:00 AM - 12:00 AM</span></li><li><span>Sunday</span> <span>10:00 AM - 10:00 PM</span></li></ul></div>
+                <div class="footer-newsletter"><h4>Stay Updated</h4><p>Subscribe for exclusive deals!</p><form class="newsletter-form" id="newsletterForm"><input type="email" placeholder="Your email address" required><button type="submit" class="btn btn-primary">Subscribe</button></form></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 FlavorFusion. All rights reserved. Made with ❤️ for food lovers.</p></div>
+        </div>
+    </footer>
+
+    <button class="scroll-top-btn" id="scrollTopBtn"><i class="fa-solid fa-chevron-up"></i></button>
+    <div class="modal-overlay" id="checkoutModalOverlay">
+        <div class="modal checkout-modal" id="checkoutModal">
+            <button class="modal-close" id="checkoutModalClose"><i class="fa-solid fa-xmark"></i></button>
+            <div class="checkout-icon">🎉</div><h2>Order Placed Successfully!</h2><p>Estimated delivery: <strong>30-45 minutes</strong>.</p>
+            <p class="checkout-order-total">Total: <span id="checkoutOrderTotal">$0.00</span></p>
+            <button class="btn btn-primary" id="checkoutConfirmBtn">Awesome, Thanks!</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlavorFusion | About Us</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .timeline { position: relative; padding: 2rem 0; }
+        .timeline::before { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 4px; background: var(--accent-color); transform: translateX(-50%); border-radius: 2px; }
+        .timeline-item { display: flex; align-items: center; margin-bottom: 2rem; position: relative; }
+        .timeline-item:nth-child(odd) { flex-direction: row-reverse; }
+        .timeline-content { background: var(--card-bg); padding: 1.5rem; border-radius: 16px; box-shadow: var(--card-shadow); width: 45%; }
+        .timeline-dot { background: var(--accent-color); color: #fff; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; position: absolute; left: 50%; transform: translateX(-50%); z-index: 1; font-weight: bold; }
+        @media (max-width: 768px) {
+            .timeline::before { left: 20px; }
+            .timeline-item, .timeline-item:nth-child(odd) { flex-direction: column; align-items: flex-start; }
+            .timeline-dot { left: 20px; transform: translateX(0); }
+            .timeline-content { width: 100%; margin-top: 1rem; }
+        }
+        .chef-card { display: flex; gap: 1.5rem; background: var(--card-bg); border-radius: 20px; overflow: hidden; box-shadow: var(--card-shadow); margin-bottom: 2rem; align-items: center; padding: 1rem; }
+        .chef-card img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; }
+        .chef-info h4 { margin-bottom: 0.2rem; }
+        .chef-info p { color: var(--text-muted); font-size: 0.9rem; }
+        @media (max-width: 576px) { .chef-card { flex-direction: column; text-align: center; } }
+    </style>
+</head>
+<body>
+    <div class="preloader" id="preloader"><div class="preloader-content"><div class="preloader-logo"><i class="fa-solid fa-utensils"></i><span>FlavorFusion</span></div><div class="preloader-spinner"><div class="spinner-ring"></div></div></div></div>
+    <div class="toast-container" id="toastContainer"></div>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo"><i class="fa-solid fa-utensils"></i><span>Flavor<span class="logo-accent">Fusion</span></span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-link">Home</a></li><li><a href="featured.html" class="nav-link">Featured</a></li><li><a href="menu.html" class="nav-link">Menu</a></li><li><a href="offers.html" class="nav-link">Offers</a></li><li><a href="about.html" class="nav-link active">About</a></li><li><a href="reviews.html" class="nav-link">Reviews</a></li><li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="icon-btn theme-toggle" id="themeToggle"><i class="fa-solid fa-moon"></i></button>
+                <button class="icon-btn cart-btn" id="cartBtn"><i class="fa-solid fa-cart-shopping"></i><span class="cart-badge" id="cartBadge">0</span></button>
+                <button class="icon-btn hamburger" id="hamburger"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <aside class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header"><h3><i class="fa-solid fa-cart-shopping"></i> Your Cart</h3><button class="icon-btn cart-close" id="cartClose"><i class="fa-solid fa-xmark"></i></button></div>
+        <div class="cart-items" id="cartItems"><p class="cart-empty">Your cart is empty 🛒</p></div>
+        <div class="cart-footer"><div class="cart-total"><span>Total:</span><span class="cart-total-price" id="cartTotal">$0.00</span></div><button class="btn btn-primary btn-full" id="checkoutBtn">Proceed to Checkout <i class="fa-solid fa-arrow-right"></i></button></div>
+    </aside>
+
+    <!-- ==================== ABOUT US (expanded) ==================== -->
+    <section class="section" style="padding-top: 6rem;">
+        <div class="container">
+            <!-- Original about grid -->
+            <div class="about-grid" style="margin-bottom: 4rem;">
+                <div class="about-image-wrapper">
+                    <div class="about-image-placeholder" style="background: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80') center/cover no-repeat;">
+                        <div class="about-floating-card"><span class="about-stat">15+</span><span>Years of<br>Excellence</span></div>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <span class="section-label">Our Story</span>
+                    <h2 class="section-title">Crafting <span class="text-accent">Memories</span> Through Food</h2>
+                    <p class="about-text">At <strong>FlavorFusion</strong>, we believe food is more than just sustenance — it's an experience, a memory, a celebration. Founded in 2009 by Chef Marco Vitelli, our kitchen blends traditional techniques with bold, modern flavors.</p>
+                    <p class="about-text">Every ingredient is handpicked, every recipe is tested to perfection, and every plate tells a story. From our wood-fired oven to your table, we pour passion into everything we serve.</p>
+                    <div class="about-features">
+                        <div class="about-feature"><i class="fa-solid fa-leaf"></i><span>Fresh Ingredients</span></div>
+                        <div class="about-feature"><i class="fa-solid fa-fire-burner"></i><span>Expert Chefs</span></div>
+                        <div class="about-feature"><i class="fa-solid fa-truck-fast"></i><span>Fast Delivery</span></div>
+                        <div class="about-feature"><i class="fa-solid fa-heart"></i><span>Made with Love</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chef Profiles -->
+            <div class="section-header" style="margin-top: 2rem;">
+                <span class="section-label">Meet the Team</span>
+                <h2 class="section-title">Our <span class="text-accent">Culinary</span> Masters</h2>
+            </div>
+            <div class="chef-card">
+                <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=150&h=150&fit=crop&crop=face" alt="Chef Marco">
+                <div class="chef-info">
+                    <h4>Chef Marco Vitelli</h4>
+                    <p>Founder & Head Chef. Trained in Milan, Marco brings 20 years of Italian culinary expertise. He believes in simplicity and letting fresh ingredients shine.</p>
+                </div>
+            </div>
+            <div class="chef-card">
+                <img src="https://images.unsplash.com/photo-1583394293214-28ded15ee548?w=150&h=150&fit=crop&crop=face" alt="Chef Aiko">
+                <div class="chef-info">
+                    <h4>Chef Aiko Tanaka</h4>
+                    <p>Pastry Chef. Aiko's desserts are a fusion of French technique and Japanese aesthetics. Her lava cake is legendary.</p>
+                </div>
+            </div>
+
+            <!-- Timeline -->
+            <div class="section-header" style="margin-top: 4rem;">
+                <span class="section-label">Our Journey</span>
+                <h2 class="section-title">FlavorFusion <span class="text-accent">Timeline</span></h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot">2009</div>
+                    <div class="timeline-content">
+                        <h4>Humble Beginnings</h4>
+                        <p>Marco opened a tiny 10‑seat pizzeria on Flavor Street.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot">2012</div>
+                    <div class="timeline-content">
+                        <h4>First Award</h4>
+                        <p>Won "Best New Restaurant" in the NYC Food Awards.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot">2015</div>
+                    <div class="timeline-content">
+                        <h4>Expansion</h4>
+                        <p>Opened a second location and launched online ordering.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot">2020</div>
+                    <div class="timeline-content">
+                        <h4>Community Support</h4>
+                        <p>Provided 10,000 free meals to frontline workers.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot">2026</div>
+                    <div class="timeline-content">
+                        <h4>National Recognition</h4>
+                        <p>Featured in "Top 50 Restaurants in America".</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand"><h3><i class="fa-solid fa-utensils"></i> Flavor<span class="logo-accent">Fusion</span></h3><p>Bringing delicious moments to your table since 2009.</p><div class="footer-social"><a href="#"><i class="fa-brands fa-facebook-f"></i></a><a href="#"><i class="fa-brands fa-instagram"></i></a><a href="#"><i class="fa-brands fa-x-twitter"></i></a><a href="#"><i class="fa-brands fa-tiktok"></i></a></div></div>
+                <div class="footer-links"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="menu.html">Menu</a></li><li><a href="offers.html">Special Offers</a></li><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+                <div class="footer-hours"><h4>Opening Hours</h4><ul><li><span>Mon - Thu</span> <span>11:00 AM - 10:00 PM</span></li><li><span>Friday</span> <span>11:00 AM - 12:00 AM</span></li><li><span>Saturday</span> <span>10:00 AM - 12:00 AM</span></li><li><span>Sunday</span> <span>10:00 AM - 10:00 PM</span></li></ul></div>
+                <div class="footer-newsletter"><h4>Stay Updated</h4><p>Subscribe for exclusive deals!</p><form class="newsletter-form" id="newsletterForm"><input type="email" placeholder="Your email address" required><button type="submit" class="btn btn-primary">Subscribe</button></form></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 FlavorFusion. All rights reserved. Made with ❤️ for food lovers.</p></div>
+        </div>
+    </footer>
+
+    <button class="scroll-top-btn" id="scrollTopBtn"><i class="fa-solid fa-chevron-up"></i></button>
+    <div class="modal-overlay" id="checkoutModalOverlay">
+        <div class="modal checkout-modal" id="checkoutModal">
+            <button class="modal-close" id="checkoutModalClose"><i class="fa-solid fa-xmark"></i></button>
+            <div class="checkout-icon">🎉</div><h2>Order Placed Successfully!</h2><p>Estimated delivery: <strong>30-45 minutes</strong>.</p>
+            <p class="checkout-order-total">Total: <span id="checkoutOrderTotal">$0.00</span></p>
+            <button class="btn btn-primary" id="checkoutConfirmBtn">Awesome, Thanks!</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

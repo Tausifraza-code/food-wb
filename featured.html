@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlavorFusion | Featured Dishes</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Additional styles for expanded featured page */
+        .highlight-banner {
+            background: var(--gradient-warm);
+            color: #fff;
+            border-radius: 24px;
+            padding: 2rem 2rem;
+            margin-bottom: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .highlight-banner h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+        .highlight-banner p {
+            opacity: 0.9;
+            max-width: 500px;
+        }
+        .category-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 4rem;
+        }
+        .category-highlight-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s;
+        }
+        .category-highlight-card:hover {
+            transform: translateY(-5px);
+        }
+        .category-highlight-card i {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+        .category-highlight-card h4 {
+            margin-bottom: 0.5rem;
+        }
+        .category-highlight-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PRELOADER -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo">
+                <i class="fa-solid fa-utensils"></i>
+                <span>FlavorFusion</span>
+            </div>
+            <div class="preloader-spinner">
+                <div class="spinner-ring"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST CONTAINER -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- STICKY NAVIGATION -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <i class="fa-solid fa-utensils"></i>
+                <span>Flavor<span class="logo-accent">Fusion</span></span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="featured.html" class="nav-link active">Featured</a></li>
+                <li><a href="menu.html" class="nav-link">Menu</a></li>
+                <li><a href="offers.html" class="nav-link">Offers</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="reviews.html" class="nav-link">Reviews</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="icon-btn theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <button class="icon-btn cart-btn" id="cartBtn" aria-label="Open cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </button>
+                <button class="icon-btn hamburger" id="hamburger" aria-label="Toggle menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CART OVERLAY -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- CART SIDEBAR -->
+    <aside class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3><i class="fa-solid fa-cart-shopping"></i> Your Cart</h3>
+            <button class="icon-btn cart-close" id="cartClose">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="cart-empty">Your cart is empty 🛒</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span class="cart-total-price" id="cartTotal">$0.00</span>
+            </div>
+            <button class="btn btn-primary btn-full" id="checkoutBtn">
+                Proceed to Checkout <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
+    </aside>
+
+    <!-- ==================== PAGE CONTENT ==================== -->
+    <!-- Highlight Banner -->
+    <section style="padding-top: 6rem;">
+        <div class="container">
+            <div class="highlight-banner">
+                <div>
+                    <h3>🌟 Chef's Special Picks</h3>
+                    <p>Hand‑selected dishes that showcase the best of FlavorFusion. Every bite is crafted to perfection and loved by our guests.</p>
+                </div>
+                <a href="menu.html" class="btn btn-outline btn-lg" style="border-color:#fff; color:#fff;">Full Menu <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Highlights (quick links) -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+            <div class="category-highlights">
+                <div class="category-highlight-card">
+                    <i class="fa-solid fa-pizza-slice"></i>
+                    <h4>Pizza</h4>
+                    <p>Wood‑fired, authentic Italian</p>
+                    <a href="menu.html" class="btn btn-sm btn-outline" style="margin-top:0.8rem;">View All</a>
+                </div>
+                <div class="category-highlight-card">
+                    <i class="fa-solid fa-burger"></i>
+                    <h4>Burgers</h4>
+                    <p>Juicy, gourmet creations</p>
+                    <a href="menu.html" class="btn btn-sm btn-outline" style="margin-top:0.8rem;">View All</a>
+                </div>
+                <div class="category-highlight-card">
+                    <i class="fa-solid fa-mug-hot"></i>
+                    <h4>Drinks</h4>
+                    <p>Refreshing beverages</p>
+                    <a href="menu.html" class="btn btn-sm btn-outline" style="margin-top:0.8rem;">View All</a>
+                </div>
+                <div class="category-highlight-card">
+                    <i class="fa-solid fa-cake-candles"></i>
+                    <h4>Desserts</h4>
+                    <p>Sweet finales to remember</p>
+                    <a href="menu.html" class="btn btn-sm btn-outline" style="margin-top:0.8rem;">View All</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED DISHES (original section, rendered by JS) -->
+    <section class="section featured-section" id="featured" style="padding-top: 0;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Popular Picks</span>
+                <h2 class="section-title">Featured <span class="text-accent">Dishes</span></h2>
+                <p class="section-desc">Our most loved creations, crafted to delight your taste buds</p>
+            </div>
+            <div class="featured-grid" id="featuredGrid">
+                <!-- Rendered by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Extra CTA -->
+    <section class="section" style="text-align:center; padding-bottom: 4rem;">
+        <div class="container">
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 1rem;">Can't Find What You Crave?</h3>
+            <p style="margin-bottom: 1.5rem;">Explore our complete menu with dozens of mouth‑watering options.</p>
+            <a href="menu.html" class="btn btn-primary btn-lg">Browse Full Menu</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3><i class="fa-solid fa-utensils"></i> Flavor<span class="logo-accent">Fusion</span></h3>
+                    <p>Bringing delicious moments to your table since 2009. Quality food, crafted with passion.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="offers.html">Special Offers</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-hours">
+                    <h4>Opening Hours</h4>
+                    <ul>
+                        <li><span>Mon - Thu</span> <span>11:00 AM - 10:00 PM</span></li>
+                        <li><span>Friday</span> <span>11:00 AM - 12:00 AM</span></li>
+                        <li><span>Saturday</span> <span>10:00 AM - 12:00 AM</span></li>
+                        <li><span>Sunday</span> <span>10:00 AM - 10:00 PM</span></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Stay Updated</h4>
+                    <p>Subscribe for exclusive deals and new menu alerts!</p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 FlavorFusion. All rights reserved. Made with ❤️ for food lovers.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCROLL TO TOP BUTTON -->
+    <button class="scroll-top-btn" id="scrollTopBtn"><i class="fa-solid fa-chevron-up"></i></button>
+
+    <!-- CHECKOUT MODAL -->
+    <div class="modal-overlay" id="checkoutModalOverlay">
+        <div class="modal checkout-modal" id="checkoutModal">
+            <button class="modal-close" id="checkoutModalClose"><i class="fa-solid fa-xmark"></i></button>
+            <div class="checkout-icon">🎉</div>
+            <h2>Order Placed Successfully!</h2>
+            <p>Your delicious food is being prepared. Estimated delivery: <strong>30-45 minutes</strong>.</p>
+            <p class="checkout-order-total">Total: <span id="checkoutOrderTotal">$0.00</span></p>
+            <button class="btn btn-primary" id="checkoutConfirmBtn">Awesome, Thanks!</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

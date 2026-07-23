@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlavorFusion | Special Offers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="preloader" id="preloader"><div class="preloader-content"><div class="preloader-logo"><i class="fa-solid fa-utensils"></i><span>FlavorFusion</span></div><div class="preloader-spinner"><div class="spinner-ring"></div></div></div></div>
+    <div class="toast-container" id="toastContainer"></div>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo"><i class="fa-solid fa-utensils"></i><span>Flavor<span class="logo-accent">Fusion</span></span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-link">Home</a></li><li><a href="featured.html" class="nav-link">Featured</a></li><li><a href="menu.html" class="nav-link">Menu</a></li><li><a href="offers.html" class="nav-link active">Offers</a></li><li><a href="about.html" class="nav-link">About</a></li><li><a href="reviews.html" class="nav-link">Reviews</a></li><li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="icon-btn theme-toggle" id="themeToggle"><i class="fa-solid fa-moon"></i></button>
+                <button class="icon-btn cart-btn" id="cartBtn"><i class="fa-solid fa-cart-shopping"></i><span class="cart-badge" id="cartBadge">0</span></button>
+                <button class="icon-btn hamburger" id="hamburger"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <aside class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header"><h3><i class="fa-solid fa-cart-shopping"></i> Your Cart</h3><button class="icon-btn cart-close" id="cartClose"><i class="fa-solid fa-xmark"></i></button></div>
+        <div class="cart-items" id="cartItems"><p class="cart-empty">Your cart is empty 🛒</p></div>
+        <div class="cart-footer"><div class="cart-total"><span>Total:</span><span class="cart-total-price" id="cartTotal">$0.00</span></div><button class="btn btn-primary btn-full" id="checkoutBtn">Proceed to Checkout <i class="fa-solid fa-arrow-right"></i></button></div>
+    </aside>
+
+    <section class="section offers-section" id="offers" style="padding-top: 6rem;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Limited Time</span>
+                <h2 class="section-title">Special <span class="text-accent">Offers</span></h2>
+                <p class="section-desc">Grab these deals before they're gone!</p>
+            </div>
+
+            <!-- Countdown Timer (existing) -->
+            <div class="countdown-wrapper">
+                <p class="countdown-label">⏰ Offer Ends In:</p>
+                <div class="countdown-timer" id="countdownTimer">
+                    <div class="countdown-item"><span class="countdown-number" id="countDays">00</span><span class="countdown-unit">Days</span></div>
+                    <span class="countdown-sep">:</span>
+                    <div class="countdown-item"><span class="countdown-number" id="countHours">00</span><span class="countdown-unit">Hours</span></div>
+                    <span class="countdown-sep">:</span>
+                    <div class="countdown-item"><span class="countdown-number" id="countMins">00</span><span class="countdown-unit">Mins</span></div>
+                    <span class="countdown-sep">:</span>
+                    <div class="countdown-item"><span class="countdown-number" id="countSecs">00</span><span class="countdown-unit">Secs</span></div>
+                </div>
+            </div>
+
+            <!-- Original 3 offer cards -->
+            <div class="offers-grid" style="margin-bottom: 2rem;">
+                <div class="offer-card">
+                    <div class="offer-badge">50% OFF</div>
+                    <div class="offer-icon"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&h=300&fit=crop" alt="Double Pizza Deal"></div>
+                    <h3>Double Pizza Deal</h3>
+                    <p>Buy one large pizza, get the second at half price.</p>
+                    <span class="offer-code">Code: PIZZA50</span>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-badge">FREE</div>
+                    <div class="offer-icon"><img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&h=300&fit=crop" alt="Free Drink with Burger"></div>
+                    <h3>Free Drink with Burger</h3>
+                    <p>Order any signature burger and enjoy a complimentary drink.</p>
+                    <span class="offer-code">Code: BURGERSIP</span>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-badge">20% OFF</div>
+                    <div class="offer-icon"><img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=400&h=300&fit=crop" alt="Sweet Tooth Special"></div>
+                    <h3>Sweet Tooth Special</h3>
+                    <p>Get 20% off on all desserts when you order a main course.</p>
+                    <span class="offer-code">Code: SWEET20</span>
+                </div>
+            </div>
+
+            <!-- Additional Offers -->
+            <div class="section-header" style="margin-top: 3rem;">
+                <h3>More Irresistible Deals</h3>
+            </div>
+            <div class="offers-grid">
+                <div class="offer-card">
+                    <div class="offer-badge">FAMILY</div>
+                    <div class="offer-icon"><img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=400&h=300&fit=crop" alt="Family Feast"></div>
+                    <h3>Family Feast Combo</h3>
+                    <p>2 large pizzas + 2 sides + 4 drinks for just $35.99.</p>
+                    <span class="offer-code">Code: FAMFEAST</span>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-badge">LUNCH</div>
+                    <div class="offer-icon"><img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=400&h=300&fit=crop" alt="Lunch Special"></div>
+                    <h3>Weekday Lunch Deal</h3>
+                    <p>Any main + drink for $9.99 (Mon–Fri, 11AM–3PM).</p>
+                    <span class="offer-code">Code: LUNCHBOX</span>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-badge">VIP</div>
+                    <div class="offer-icon"><img src="https://images.unsplash.com/photo-1559329007-40df8a9345d8?w=400&h=300&fit=crop" alt="Loyalty Program"></div>
+                    <h3>Loyalty Program</h3>
+                    <p>Join free & earn points on every order. Redeem for free dishes!</p>
+                    <a href="contact.html" class="btn btn-outline btn-sm">Join Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand"><h3><i class="fa-solid fa-utensils"></i> Flavor<span class="logo-accent">Fusion</span></h3><p>Bringing delicious moments to your table since 2009.</p><div class="footer-social"><a href="#"><i class="fa-brands fa-facebook-f"></i></a><a href="#"><i class="fa-brands fa-instagram"></i></a><a href="#"><i class="fa-brands fa-x-twitter"></i></a><a href="#"><i class="fa-brands fa-tiktok"></i></a></div></div>
+                <div class="footer-links"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="menu.html">Menu</a></li><li><a href="offers.html">Special Offers</a></li><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+                <div class="footer-hours"><h4>Opening Hours</h4><ul><li><span>Mon - Thu</span> <span>11:00 AM - 10:00 PM</span></li><li><span>Friday</span> <span>11:00 AM - 12:00 AM</span></li><li><span>Saturday</span> <span>10:00 AM - 12:00 AM</span></li><li><span>Sunday</span> <span>10:00 AM - 10:00 PM</span></li></ul></div>
+                <div class="footer-newsletter"><h4>Stay Updated</h4><p>Subscribe for exclusive deals!</p><form class="newsletter-form" id="newsletterForm"><input type="email" placeholder="Your email address" required><button type="submit" class="btn btn-primary">Subscribe</button></form></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 FlavorFusion. All rights reserved. Made with ❤️ for food lovers.</p></div>
+        </div>
+    </footer>
+
+    <button class="scroll-top-btn" id="scrollTopBtn"><i class="fa-solid fa-chevron-up"></i></button>
+    <div class="modal-overlay" id="checkoutModalOverlay">
+        <div class="modal checkout-modal" id="checkoutModal">
+            <button class="modal-close" id="checkoutModalClose"><i class="fa-solid fa-xmark"></i></button>
+            <div class="checkout-icon">🎉</div><h2>Order Placed Successfully!</h2><p>Estimated delivery: <strong>30-45 minutes</strong>.</p>
+            <p class="checkout-order-total">Total: <span id="checkoutOrderTotal">$0.00</span></p>
+            <button class="btn btn-primary" id="checkoutConfirmBtn">Awesome, Thanks!</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlavorFusion | Contact Us</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .faq-item { background: var(--card-bg); border-radius: 16px; margin-bottom: 1rem; padding: 1.2rem; cursor: pointer; box-shadow: var(--card-shadow); }
+        .faq-question { font-weight: 600; display: flex; justify-content: space-between; align-items: center; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; color: var(--text-muted); margin-top: 0.5rem; }
+        .faq-item.active .faq-answer { max-height: 200px; }
+        .map-container { border-radius: 20px; overflow: hidden; box-shadow: var(--card-shadow); margin-bottom: 2rem; }
+    </style>
+</head>
+<body>
+    <div class="preloader" id="preloader"><div class="preloader-content"><div class="preloader-logo"><i class="fa-solid fa-utensils"></i><span>FlavorFusion</span></div><div class="preloader-spinner"><div class="spinner-ring"></div></div></div></div>
+    <div class="toast-container" id="toastContainer"></div>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo"><i class="fa-solid fa-utensils"></i><span>Flavor<span class="logo-accent">Fusion</span></span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-link">Home</a></li><li><a href="featured.html" class="nav-link">Featured</a></li><li><a href="menu.html" class="nav-link">Menu</a></li><li><a href="offers.html" class="nav-link">Offers</a></li><li><a href="about.html" class="nav-link">About</a></li><li><a href="reviews.html" class="nav-link">Reviews</a></li><li><a href="contact.html" class="nav-link active">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="icon-btn theme-toggle" id="themeToggle"><i class="fa-solid fa-moon"></i></button>
+                <button class="icon-btn cart-btn" id="cartBtn"><i class="fa-solid fa-cart-shopping"></i><span class="cart-badge" id="cartBadge">0</span></button>
+                <button class="icon-btn hamburger" id="hamburger"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <aside class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header"><h3><i class="fa-solid fa-cart-shopping"></i> Your Cart</h3><button class="icon-btn cart-close" id="cartClose"><i class="fa-solid fa-xmark"></i></button></div>
+        <div class="cart-items" id="cartItems"><p class="cart-empty">Your cart is empty 🛒</p></div>
+        <div class="cart-footer"><div class="cart-total"><span>Total:</span><span class="cart-total-price" id="cartTotal">$0.00</span></div><button class="btn btn-primary btn-full" id="checkoutBtn">Proceed to Checkout <i class="fa-solid fa-arrow-right"></i></button></div>
+    </aside>
+
+    <section class="section contact-section" id="contact" style="padding-top: 6rem;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Get In Touch</span>
+                <h2 class="section-title">Contact <span class="text-accent">Us</span></h2>
+            </div>
+
+            <!-- Map -->
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.966279104312!2d-74.00401868459429!3d40.7106555793325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a197c06b7e5%3A0xc8895f6b2b7a6b49!2s123%20Flavor%20St%2C%20New%20York%2C%20NY%2010001!5e0!3m2!1sen!2sus!4v1689000000000" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+
+            <!-- Original contact grid -->
+            <div class="contact-grid" style="margin-bottom: 3rem;">
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group"><label for="contactName">Your Name *</label><input type="text" id="contactName" placeholder="Enter your name" required><span class="form-error" id="nameError"></span></div>
+                    <div class="form-group"><label for="contactEmail">Email Address *</label><input type="email" id="contactEmail" placeholder="Enter your email" required><span class="form-error" id="emailError"></span></div>
+                    <div class="form-group"><label for="contactSubject">Subject</label><input type="text" id="contactSubject" placeholder="What's this about?"></div>
+                    <div class="form-group"><label for="contactMessage">Message *</label><textarea id="contactMessage" rows="5" placeholder="Write your message..." required></textarea><span class="form-error" id="messageError"></span></div>
+                    <button type="submit" class="btn btn-primary btn-full">Send Message <i class="fa-solid fa-paper-plane"></i></button>
+                </form>
+                <div class="contact-info">
+                    <div class="contact-info-card"><i class="fa-solid fa-location-dot"></i><h4>Our Location</h4><p>123 Flavor Street, Foodie District<br>New York, NY 10001</p></div>
+                    <div class="contact-info-card"><i class="fa-solid fa-phone"></i><h4>Call Us</h4><p>+1 (555) 123-4567<br>+1 (555) 987-6543</p></div>
+                    <div class="contact-info-card"><i class="fa-solid fa-envelope"></i><h4>Email Us</h4><p>hello@flavorfusion.com<br>orders@flavorfusion.com</p></div>
+                    <div class="contact-info-card"><i class="fa-solid fa-clock"></i><h4>Opening Hours</h4><p>Mon - Thu: 11:00 AM - 10:00 PM<br>Fri - Sun: 11:00 AM - 12:00 AM</p></div>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="section-header" style="margin-top: 4rem;">
+                <span class="section-label">Help Center</span>
+                <h2 class="section-title">Frequently Asked <span class="text-accent">Questions</span></h2>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Do you offer gluten-free options? <i class="fa-solid fa-chevron-down"></i></div>
+                <div class="faq-answer">Yes! We have gluten-free pizza crusts and buns. Please mention it when ordering.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What are your delivery hours? <i class="fa-solid fa-chevron-down"></i></div>
+                <div class="faq-answer">We deliver from 11:00 AM to 11:00 PM daily. Last order must be placed by 10:30 PM.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">How can I apply a promo code? <i class="fa-solid fa-chevron-down"></i></div>
+                <div class="faq-answer">During checkout, there's a field to enter your code. Discount will be applied instantly.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Can I customize my order? <i class="fa-solid fa-chevron-down"></i></div>
+                <div class="faq-answer">Absolutely! Use the "Build Your Own" option or leave a note in your order.</div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand"><h3><i class="fa-solid fa-utensils"></i> Flavor<span class="logo-accent">Fusion</span></h3><p>Bringing delicious moments to your table since 2009.</p><div class="footer-social"><a href="#"><i class="fa-brands fa-facebook-f"></i></a><a href="#"><i class="fa-brands fa-instagram"></i></a><a href="#"><i class="fa-brands fa-x-twitter"></i></a><a href="#"><i class="fa-brands fa-tiktok"></i></a></div></div>
+                <div class="footer-links"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="menu.html">Menu</a></li><li><a href="offers.html">Special Offers</a></li><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+                <div class="footer-hours"><h4>Opening Hours</h4><ul><li><span>Mon - Thu</span> <span>11:00 AM - 10:00 PM</span></li><li><span>Friday</span> <span>11:00 AM - 12:00 AM</span></li><li><span>Saturday</span> <span>10:00 AM - 12:00 AM</span></li><li><span>Sunday</span> <span>10:00 AM - 10:00 PM</span></li></ul></div>
+                <div class="footer-newsletter"><h4>Stay Updated</h4><p>Subscribe for exclusive deals!</p><form class="newsletter-form" id="newsletterForm"><input type="email" placeholder="Your email address" required><button type="submit" class="btn btn-primary">Subscribe</button></form></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 FlavorFusion. All rights reserved. Made with ❤️ for food lovers.</p></div>
+        </div>
+    </footer>
+
+    <button class="scroll-top-btn" id="scrollTopBtn"><i class="fa-solid fa-chevron-up"></i></button>
+    <div class="modal-overlay" id="checkoutModalOverlay">
+        <div class="modal checkout-modal" id="checkoutModal">
+            <button class="modal-close" id="checkoutModalClose"><i class="fa-solid fa-xmark"></i></button>
+            <div class="checkout-icon">🎉</div><h2>Order Placed Successfully!</h2><p>Estimated delivery: <strong>30-45 minutes</strong>.</p>
+            <p class="checkout-order-total">Total: <span id="checkoutOrderTotal">$0.00</span></p>
+            <button class="btn btn-primary" id="checkoutConfirmBtn">Awesome, Thanks!</button>
+        </div>
+    </div>
+
+    <!-- Simple FAQ toggle script -->
+    <script>
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('active');
+                const icon = item.querySelector('i');
+                if (icon) {
+                    if (item.classList.contains('active')) icon.classList.replace('fa-chevron-down', 'fa-chevron-up');
+                    else icon.classList.replace('fa-chevron-up', 'fa-chevron-down');
+                }
+            });
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
